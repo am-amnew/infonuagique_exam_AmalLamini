@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="bus.css" />
+
+
+    <img src="cloud.png" width="300px" height="300px" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--Stylesheet-->
+    <style>
+        body {
+            background-color: rgb(133 208 187);
+        }
+        
+        .backgroud {
+            background-image: url("background.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 400px;
+            background-size: cover;
+            margin: auto;
+        }
+        
+        .backgroud img {
+            position: relative;
+            top: 200px;
+        }
+        
+        .shape {
+            width: 250px;
+            height: 150px;
+        }
+        
+        .Buttons {
+            width: 40%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+        
+        .Buttons button {
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #121113;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section>
+        <h1>Comment</h1>
+
+        <div class="tbl-header">
+            <table>
+                <thead>
+
+
+                    <th>Comment</th>
+                    <th></th>
+
+                </thead>
+            </table>
+        </div>
+        <div class="tbl-content">
+            <table>
+                <tbody>
+
+                    <tr>
+                        <% data.forEach((e, showcomment)=> { %>
+                            { %>
+                            <td>
+                                <%=e.comment %>
+                            </td>
+
+
+                            <td>
+                                <button class="btn"><a href="/delete/comment/<%= e._id %>"class="fa fa-trash"></a></button>
+
+
+
+
+                            </td>
+
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </section>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Design by foolishdeveloper.com -->
+    <title>Glassmorphism login Form Tutorial in html css</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <img src="/ohoh.png" width="300px" height="300px" />
+
+    <style media="screen">
+        *,
+        *:before,
+        *:after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000010;
+        }
+        
+        .background {
+            width: 600px;
+            height: 600px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+        }
+        
+        .background .shape {
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            border-radius: 50%;
+        }
+        
+        .shape:first-child {
+            background: linear-gradient( #16a085, #000000);
+            left: -80px;
+            top: -80px;
+        }
+        
+        .shape:last-child {
+            background: linear-gradient( to right, #16a085, #000000);
+            right: -30px;
+            bottom: -80px;
+        }
+        
+        form {
+            height: 800px;
+            width: 600px;
+            background-color: rgba(255, 255, 255, 0.13);
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 50px 35px;
+        }
+        
+        form * {
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            outline: none;
+            border: none;
+        }
+        
+        form h3 {
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 42px;
+            text-align: center;
+        }
+        
+        label {
+            display: block;
+            margin-top: 5px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        select {
+            display: block;
+            margin-top: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            display: block;
+            height: 30px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.07);
+            border-radius: 3px;
+            padding: 0 10px;
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 300;
+        }
+        
+        input {
+            display: block;
+            height: 30px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.07);
+            border-radius: 3px;
+            padding: 0 10px;
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 300;
+        }
+        
+         ::placeholder {
+            color: #e5e5e5;
+        }
+        
+        .social {
+            margin-top: 30px;
+            display: flex;
+        }
+        
+        .social div {
+            background: red;
+            width: 150px;
+            border-radius: 3px;
+            padding: 5px 10px 10px 5px;
+            background-color: rgba(255, 255, 255, 0.27);
+            color: #eaf0fb;
+            text-align: center;
+        }
+        
+        .social div:hover {
+            background-color: rgba(255, 255, 255, 0.47);
+        }
+        
+        .social .fb {
+            margin-left: 25px;
+        }
+        
+        .social i {
+            margin-right: 4px;
+        }
+        
+        img {
+            position: absolute;
+            top: -80px;
+            right: 0px;
+        }
+        
+        .button {
+            position: relative;
+            background-color: #16a085;
+            border-radius: 4em;
+            font-size: 25px;
+            color: white;
+            padding: 0.8em 1.8em;
+            cursor: pointer;
+            user-select: none;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition-duration: 0.4s;
+            -webkit-transition-duration: 0.4s;
+            margin-top: 50px;
+            padding: 15px 0;
+        }
+        /* Safari */
+        
+        .button:hover {
+            transition-duration: 0.1s;
+            background-color: #263834;
+        }
+        
+        .button:after {
+            content: "";
+            display: block;
+            position: absolute;
+            border-radius: 4em;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: all 0.5s;
+            box-shadow: 0 0 10px 40px white;
+        }
+        
+        .button:active:after {
+            box-shadow: 0 0 0 0 white;
+            position: absolute;
+            border-radius: 4em;
+            left: 0;
+            top: 0;
+            opacity: 1;
+            transition: 0s;
+        }
+        
+        .button:active {
+            top: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <form method="post" action="/edit/User/<%= id %>">
+
+        <h3>Register</h3>
+
+        <label for="username">Matricule</label>
+        <input type="text" placeholder="Matricule" id="Matricule" name="Matricule" value="<%= Matricule %>">
+
+        <label for="username">Prenom</label>
+        <input type="text" placeholder="Prenom" id="Prenom" name="Prenom" value="<%= Prenom %>">
+
+        <label for="username">Nom</label>
+        <input type="text" placeholder="name" id="name" name="name" value="<%= name %>">
+
+        <label for="username">Téléphone</label>
+        <input type="number" placeholder="Téléphone" id="Tele" name="Tele" value="<%= Tele %>">
+
+        <label for="username">Email</label>
+        <input type="text" placeholder="email" id="email" name="email" value="<%= email %>">
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password" name="password" value="<%= password %>">
+
+        <label for="password">Adress</label>
+        <input type="text" placeholder="Adress" id="Adress" name="Adress" value="Adress">
+
+        <input type="submit" value="Enregistrer">
+
+
+        <div class="social">
+            <div class="go"><i class="fab fa-google"></i> Google</div>
+            <div class="fb"><i class="fab fa-facebook"></i> Facebook</div>
+        </div>
+
+    </form>
+
+</body>
+
+</html>

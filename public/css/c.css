@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:700,900');
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body {
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* Sections */
+
+.section {
+    height: 100vh;
+    min-height: 500px;
+    position: relative;
+}
+
+
+/* Containers */
+
+.content-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    clip: rect(auto, auto, auto, auto);
+    pointer-events: none;
+}
+
+.content-inner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    padding: 0;
+    z-index: 99;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: transform;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+    pointer-events: all;
+}
+
+.content-center {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+/* Aesthetics */
+
+.top-section {
+    background: #080710;
+}
+
+.bottom-section {
+    background: #d4fef2;
+}
+
+.section h1 {
+    font-size: 200px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.section p,
+.section a {
+    font-weight: 700;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.content-theme-dark h1 {
+    color: #ffffff;
+    text-shadow: 0 20px 40px rgba(0, 0, 0, .5);
+}
+
+.content-theme-dark p,
+.content-theme-dark a {
+    color: #ffffff;
+}
+
+.content-theme-light h1 {
+    color: #080710;
+    text-shadow: 0 20px 40px rgba(0, 0, 0, .5);
+}
+
+.content-theme-light p,
+.content-theme-light a {
+    color: #728E93;
+}
+
+.button {
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 20px;
+    letter-spacing: 4px;
+    position: relative;
+    background-color: #16a085;
+    border: none;
+    color: #fff;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    transition-duration: 0.4s;
+    overflow: hidden;
+    box-shadow: 0 5px 15px #193047;
+    border-radius: 4px;
+}
+
+.button:hover {
+    background: #fff;
+    box-shadow: 0px 2px 10px 5px #1abc9c;
+    color: #000;
+}
+
+.button:after {
+    content: "";
+    background: #97b4ae;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+.button:focus {
+    outline: 0;
+}
