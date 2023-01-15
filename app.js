@@ -28,7 +28,9 @@ const server = http.createServer(app);
 const io = socketIo(server);
 
 
-
+app.get('/first1', function(req, res) {
+    res.render("first1.ejs")
+});
 
 
 app.get('/signup', function(req, res) {
@@ -44,9 +46,7 @@ app.get('/accout', function(req, res) {
 app.get('/choose', function(req, res) {
     res.render("m.ejs")
 });
-app.get('/first1', function(req, res) {
-    res.render("first1.ejs")
-});
+
 app.get('/firstcours', function(req, res) {
     res.render("firstcours.ejs")
 });
